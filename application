@@ -1,0 +1,60 @@
+#missing data
+def mis_data(data):
+    Total=data.isnull().sum().sort_values(ascending=False)
+    Percent=Total/data.shape[0]
+    missing=pd.DataFrame({'Total': Total, 'Percent':Percent})
+    return missing
+# Outliers
+def outlier(data, cols):
+    out=data[cols].quantile([0.25, 0.75])
+    data[cols]=data[cols].clip(2.5*out.loc[0.25]-1.5*out.loc[0.75], 2.5*out.loc[0.75]-1.5*out.loc[0.25], axis=1)
+    return data
+#Plotting
+def hist_plot(data, cols, m,n):
+    j=0
+    plt.figure(figsize=(20,20))
+    for i in cols:
+        j=j+1
+        plt.subplot(m,n,j)
+        sns.distplot(data[i], bins=20)
+###################
+def box_plot(data, cols, m,n):
+    j=0
+    plt.figure(figsize=(20,20))
+    for i in cols:
+        j=j+1
+        plt.subplot(m,n,j)
+        sns.boxplot(y=data[i])
+#####################
+fig=plt.figure(figsize=(20,15))
+for i in range(9):
+    plt.subplot(3,3,i+1)
+    ax=sns.countplot(app_train[object_cols[i]])
+    plt.xticks(rotation=45, horizontalalignment='right')
+    total=len(app_train)
+    for p in ax.patches:
+        height=p.get_height()
+        ax.text(p.get_x()+p.get_width()/2.,height+3, '{:1.2f}'.format(height/total), ha='center')
+#Logarit transform
+amt_cols=['AMT_ANNUITY', 'AMT_CREDIT', 'AMT_INCOME_TOTAL','AMT_GOODS_PRICE']
+app_train[amt_cols]=np.log(app_train[amt_cols])
+app_test[amt_cols]=np.log(app_test[amt_cols])
+
+#encoding the object variable
+def encode(data, cols):
+    n=data.shape[0]
+    for col in cols:
+        val_map=(data[col].value_counts(normalize=True)).round(2)
+        data[col]=data[col].map(val_map)
+    return data
+#############
+day_cols=['DAYS_REGISTRATION',  'DAYS_ID_PUBLISH','DAYS_LAST_PHONE_CHANGE','DAYS_EMPLOYED', 'DAYS_BIRTH']
+app_train[day_cols]=app_train[day_cols]//365
+app_test[day_cols]=app_test[day_cols]//365
+  
+mis_train=mis_data(app_train)
+print(mis_train.head(10))
+mis_test=mis_data(app_train)
+print(mis_test.head(10))
+##############
+num_n_val=pd.DataFrame({'n_values':app_train[num_cols].nunique().sort_values(ascending=False)})
