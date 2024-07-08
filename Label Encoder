@@ -1,1 +1,1212 @@
-{"metadata":{"kernelspec":{"language":"python","display_name":"Python 3","name":"python3"},"language_info":{"name":"python","version":"3.10.13","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"},"kaggle":{"accelerator":"none","dataSources":[{"sourceId":3136,"databundleVersionId":26502,"sourceType":"competition"}],"dockerImageVersionId":30732,"isInternetEnabled":true,"language":"python","sourceType":"notebook","isGpuEnabled":false}},"nbformat_minor":4,"nbformat":4,"cells":[{"cell_type":"code","source":"# This Python 3 environment comes with many helpful analytics libraries installed\n# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python\n# For example, here's several helpful packages to load\n\nimport numpy as np # linear algebra\nimport pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\n\n# Input data files are available in the read-only \"../input/\" directory\n# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory\n\nimport os\nfor dirname, _, filenames in os.walk('/kaggle/input'):\n    for filename in filenames:\n        print(os.path.join(dirname, filename))\n\n# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using \"Save & Run All\" \n# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session","metadata":{"_uuid":"8f2839f25d086af736a60e9eeb907d3b93b6e0e5","_cell_guid":"b1076dfc-b9ad-4769-8c92-a6c4dae69d19","execution":{"iopub.status.busy":"2024-07-08T15:37:14.617983Z"},"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"import matplotlib.pyplot as plt\nimport seaborn as sns","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train=pd.read_csv('/kaggle/input/titanic/train.csv')\ntest= pd.read_csv('/kaggle/input/titanic/test.csv')","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.columns","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.head()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.info()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"test.shape","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train=train.drop(['Cabin', 'Ticket'], axis=1)\ntest=test.drop(['Cabin', 'Ticket'], axis=1)","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"test.head()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train['Title']=train['Name'].str.extract(r'(\\w+)\\.')\ntest['Title']=test['Name'].str.extract(r'(\\w+)\\.')","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train['Title'].value_counts()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train['Title']=train['Title'].replace([ 'Lady','Don', 'Rev', 'Dr', 'Major','Col', 'Sir','Capt', 'Countess','Jonkheer'], 'rare')\ntrain['Title']=train['Title'].replace(['Mlle','Ms'], 'Mrs')\ntrain['Title']=train['Title'].replace('Mme', 'Miss')\ntest['Title']=test['Title'].replace([ 'Lady','Don','Dona', 'Rev', 'Dr', 'Major','Col', 'Sir','Capt', 'Countess','Jonkheer'], 'rare')\ntest['Title']=test['Title'].replace(['Mlle','Ms'], 'Mrs')\ntest['Title']=test['Title'].replace('Mme', 'Miss')","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"test['Title'].unique()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train['Title'].unique()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train=train.drop('Name', axis=1)\ntest=test.drop('Name', axis=1)","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.head()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"from sklearn.preprocessing import LabelEncoder","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"markdown","source":"### Label Encoder","metadata":{}},{"cell_type":"code","source":"Enco=LabelEncoder()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"Enco.fit(train['Sex'])\ntrain['Sex']=Enco.transform(train['Sex'])\ntest['Sex']=Enco.transform(test['Sex'])","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"Enco.fit(train['Embarked'])\ntrain['Embarked']=Enco.transform(train['Embarked'])\ntest['Embarked']=Enco.transform(test['Embarked'])","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"Enco.fit(train['Title'])\ntrain['Title']=Enco.transform(train['Title'])\ntest['Title']=Enco.transform(test['Title'])","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.head()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"test.head()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"from sklearn.impute import KNNImputer","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"Imp=KNNImputer(n_neighbors=5)\ntrain[ ['Pclass', 'Sex', 'Age', 'Title']]=Imp.fit_transform(train[ ['Pclass', 'Sex', 'Age', 'Title']])\ntest[ ['Pclass', 'Sex', 'Age', 'Title']]=Imp.fit_transform(test[ ['Pclass', 'Sex', 'Age', 'Title']])","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"from sklearn.impute import SimpleImputer\nSimImp=SimpleImputer()\ntest[['Fare']]=SimImp.fit_transform(test[['Fare']])","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.info()","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"train.loc[[0]]","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"from sklearn.svm import LinearSVC","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"SVM=LinearSVC(tol=1e-7)\nSVM.fit(X_train, y_train)\ny_pred_svm=SVM.predict(X_train)","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"metrics.accuracy_score(y_train, y_pred_svm)","metadata":{"trusted":true},"execution_count":null,"outputs":[]},{"cell_type":"code","source":"","metadata":{},"execution_count":null,"outputs":[]}]}
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "31dc6396",
+   "metadata": {
+    "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
+    "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:22.860701Z",
+     "iopub.status.busy": "2024-07-08T15:51:22.860258Z",
+     "iopub.status.idle": "2024-07-08T15:51:23.678068Z",
+     "shell.execute_reply": "2024-07-08T15:51:23.676814Z"
+    },
+    "papermill": {
+     "duration": 0.828951,
+     "end_time": "2024-07-08T15:51:23.681085",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:22.852134",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/input/titanic/train.csv\n",
+      "/kaggle/input/titanic/test.csv\n",
+      "/kaggle/input/titanic/gender_submission.csv\n"
+     ]
+    }
+   ],
+   "source": [
+    "# This Python 3 environment comes with many helpful analytics libraries installed\n",
+    "# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python\n",
+    "# For example, here's several helpful packages to load\n",
+    "\n",
+    "import numpy as np # linear algebra\n",
+    "import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\n",
+    "\n",
+    "# Input data files are available in the read-only \"../input/\" directory\n",
+    "# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory\n",
+    "\n",
+    "import os\n",
+    "for dirname, _, filenames in os.walk('/kaggle/input'):\n",
+    "    for filename in filenames:\n",
+    "        print(os.path.join(dirname, filename))\n",
+    "\n",
+    "# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using \"Save & Run All\" \n",
+    "# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "45338806",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:23.695016Z",
+     "iopub.status.busy": "2024-07-08T15:51:23.694518Z",
+     "iopub.status.idle": "2024-07-08T15:51:24.868562Z",
+     "shell.execute_reply": "2024-07-08T15:51:24.867624Z"
+    },
+    "papermill": {
+     "duration": 1.183713,
+     "end_time": "2024-07-08T15:51:24.871103",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:23.687390",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "c2cc0ea0",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:24.883819Z",
+     "iopub.status.busy": "2024-07-08T15:51:24.883483Z",
+     "iopub.status.idle": "2024-07-08T15:51:24.909903Z",
+     "shell.execute_reply": "2024-07-08T15:51:24.908833Z"
+    },
+    "papermill": {
+     "duration": 0.035563,
+     "end_time": "2024-07-08T15:51:24.912344",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:24.876781",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train=pd.read_csv('/kaggle/input/titanic/train.csv')\n",
+    "test= pd.read_csv('/kaggle/input/titanic/test.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "67522737",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:24.924757Z",
+     "iopub.status.busy": "2024-07-08T15:51:24.924396Z",
+     "iopub.status.idle": "2024-07-08T15:51:24.933315Z",
+     "shell.execute_reply": "2024-07-08T15:51:24.932441Z"
+    },
+    "papermill": {
+     "duration": 0.017584,
+     "end_time": "2024-07-08T15:51:24.935510",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:24.917926",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',\n",
+       "       'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],\n",
+       "      dtype='object')"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "fec40e26",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:24.948889Z",
+     "iopub.status.busy": "2024-07-08T15:51:24.948209Z",
+     "iopub.status.idle": "2024-07-08T15:51:24.973349Z",
+     "shell.execute_reply": "2024-07-08T15:51:24.972317Z"
+    },
+    "papermill": {
+     "duration": 0.034494,
+     "end_time": "2024-07-08T15:51:24.975692",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:24.941198",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Name</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Ticket</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Cabin</th>\n",
+       "      <th>Embarked</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>Braund, Mr. Owen Harris</td>\n",
+       "      <td>male</td>\n",
+       "      <td>22.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>A/5 21171</td>\n",
+       "      <td>7.2500</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>\n",
+       "      <td>female</td>\n",
+       "      <td>38.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>PC 17599</td>\n",
+       "      <td>71.2833</td>\n",
+       "      <td>C85</td>\n",
+       "      <td>C</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>Heikkinen, Miss. Laina</td>\n",
+       "      <td>female</td>\n",
+       "      <td>26.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>STON/O2. 3101282</td>\n",
+       "      <td>7.9250</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>4</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>\n",
+       "      <td>female</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>113803</td>\n",
+       "      <td>53.1000</td>\n",
+       "      <td>C123</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>5</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>Allen, Mr. William Henry</td>\n",
+       "      <td>male</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>373450</td>\n",
+       "      <td>8.0500</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   PassengerId  Survived  Pclass  \\\n",
+       "0            1         0       3   \n",
+       "1            2         1       1   \n",
+       "2            3         1       3   \n",
+       "3            4         1       1   \n",
+       "4            5         0       3   \n",
+       "\n",
+       "                                                Name     Sex   Age  SibSp  \\\n",
+       "0                            Braund, Mr. Owen Harris    male  22.0      1   \n",
+       "1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1   \n",
+       "2                             Heikkinen, Miss. Laina  female  26.0      0   \n",
+       "3       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1   \n",
+       "4                           Allen, Mr. William Henry    male  35.0      0   \n",
+       "\n",
+       "   Parch            Ticket     Fare Cabin Embarked  \n",
+       "0      0         A/5 21171   7.2500   NaN        S  \n",
+       "1      0          PC 17599  71.2833   C85        C  \n",
+       "2      0  STON/O2. 3101282   7.9250   NaN        S  \n",
+       "3      0            113803  53.1000  C123        S  \n",
+       "4      0            373450   8.0500   NaN        S  "
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "35b49c58",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:24.988866Z",
+     "iopub.status.busy": "2024-07-08T15:51:24.988530Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.010620Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.009284Z"
+    },
+    "papermill": {
+     "duration": 0.031312,
+     "end_time": "2024-07-08T15:51:25.012901",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:24.981589",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 891 entries, 0 to 890\n",
+      "Data columns (total 12 columns):\n",
+      " #   Column       Non-Null Count  Dtype  \n",
+      "---  ------       --------------  -----  \n",
+      " 0   PassengerId  891 non-null    int64  \n",
+      " 1   Survived     891 non-null    int64  \n",
+      " 2   Pclass       891 non-null    int64  \n",
+      " 3   Name         891 non-null    object \n",
+      " 4   Sex          891 non-null    object \n",
+      " 5   Age          714 non-null    float64\n",
+      " 6   SibSp        891 non-null    int64  \n",
+      " 7   Parch        891 non-null    int64  \n",
+      " 8   Ticket       891 non-null    object \n",
+      " 9   Fare         891 non-null    float64\n",
+      " 10  Cabin        204 non-null    object \n",
+      " 11  Embarked     889 non-null    object \n",
+      "dtypes: float64(2), int64(5), object(5)\n",
+      "memory usage: 83.7+ KB\n"
+     ]
+    }
+   ],
+   "source": [
+    "train.info()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "193c3f6c",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.027038Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.026202Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.032587Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.031502Z"
+    },
+    "papermill": {
+     "duration": 0.015942,
+     "end_time": "2024-07-08T15:51:25.034949",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.019007",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(418, 11)"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "test.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "1ac30138",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.049478Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.048765Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.058963Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.057966Z"
+    },
+    "papermill": {
+     "duration": 0.020017,
+     "end_time": "2024-07-08T15:51:25.061277",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.041260",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train=train.drop(['Cabin', 'Ticket'], axis=1)\n",
+    "test=test.drop(['Cabin', 'Ticket'], axis=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "a8b6567a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.075069Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.074689Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.087042Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.086105Z"
+    },
+    "papermill": {
+     "duration": 0.02185,
+     "end_time": "2024-07-08T15:51:25.089251",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.067401",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train['Title']=train['Name'].str.extract(r'(\\w+)\\.')\n",
+    "test['Title']=test['Name'].str.extract(r'(\\w+)\\.')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "a5edc4a8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.102854Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.102513Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.115919Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.115022Z"
+    },
+    "papermill": {
+     "duration": 0.022779,
+     "end_time": "2024-07-08T15:51:25.118173",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.095394",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train['Title']=train['Title'].replace([ 'Lady','Don', 'Rev', 'Dr', 'Major','Col', 'Sir','Capt', 'Countess','Jonkheer'], 'rare')\n",
+    "train['Title']=train['Title'].replace(['Mlle','Ms'], 'Mrs')\n",
+    "train['Title']=train['Title'].replace('Mme', 'Miss')\n",
+    "test['Title']=test['Title'].replace([ 'Lady','Don','Dona', 'Rev', 'Dr', 'Major','Col', 'Sir','Capt', 'Countess','Jonkheer'], 'rare')\n",
+    "test['Title']=test['Title'].replace(['Mlle','Ms'], 'Mrs')\n",
+    "test['Title']=test['Title'].replace('Mme', 'Miss')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "6b91b8c6",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.132217Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.131514Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.138589Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.137434Z"
+    },
+    "papermill": {
+     "duration": 0.016386,
+     "end_time": "2024-07-08T15:51:25.140668",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.124282",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array(['Mr', 'Mrs', 'Miss', 'Master', 'rare'], dtype=object)"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "test['Title'].unique()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "b5ff2478",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.154868Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.154241Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.161282Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.160324Z"
+    },
+    "papermill": {
+     "duration": 0.016569,
+     "end_time": "2024-07-08T15:51:25.163526",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.146957",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array(['Mr', 'Mrs', 'Miss', 'Master', 'rare'], dtype=object)"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train['Title'].unique()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "51d48a75",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.177476Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.177113Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.184636Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.183620Z"
+    },
+    "papermill": {
+     "duration": 0.016889,
+     "end_time": "2024-07-08T15:51:25.186664",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.169775",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train=train.drop('Name', axis=1)\n",
+    "test=test.drop('Name', axis=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "963c768f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.201492Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.200853Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.214208Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.213232Z"
+    },
+    "papermill": {
+     "duration": 0.023948,
+     "end_time": "2024-07-08T15:51:25.216935",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.192987",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Embarked</th>\n",
+       "      <th>Title</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>male</td>\n",
+       "      <td>22.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2500</td>\n",
+       "      <td>S</td>\n",
+       "      <td>Mr</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>female</td>\n",
+       "      <td>38.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>71.2833</td>\n",
+       "      <td>C</td>\n",
+       "      <td>Mrs</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>female</td>\n",
+       "      <td>26.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.9250</td>\n",
+       "      <td>S</td>\n",
+       "      <td>Miss</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>4</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>female</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>53.1000</td>\n",
+       "      <td>S</td>\n",
+       "      <td>Mrs</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>5</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>male</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>8.0500</td>\n",
+       "      <td>S</td>\n",
+       "      <td>Mr</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   PassengerId  Survived  Pclass     Sex   Age  SibSp  Parch     Fare  \\\n",
+       "0            1         0       3    male  22.0      1      0   7.2500   \n",
+       "1            2         1       1  female  38.0      1      0  71.2833   \n",
+       "2            3         1       3  female  26.0      0      0   7.9250   \n",
+       "3            4         1       1  female  35.0      1      0  53.1000   \n",
+       "4            5         0       3    male  35.0      0      0   8.0500   \n",
+       "\n",
+       "  Embarked Title  \n",
+       "0        S    Mr  \n",
+       "1        C   Mrs  \n",
+       "2        S  Miss  \n",
+       "3        S   Mrs  \n",
+       "4        S    Mr  "
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "69d19839",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.231742Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.230829Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.442239Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.441083Z"
+    },
+    "papermill": {
+     "duration": 0.221382,
+     "end_time": "2024-07-08T15:51:25.444697",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.223315",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from sklearn.preprocessing import LabelEncoder"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "16e88118",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006095,
+     "end_time": "2024-07-08T15:51:25.457313",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.451218",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Label Encoder"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "a43dd300",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.472176Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.471314Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.476459Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.475308Z"
+    },
+    "papermill": {
+     "duration": 0.01492,
+     "end_time": "2024-07-08T15:51:25.478735",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.463815",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "Enco=LabelEncoder()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "c0421648",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.493664Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.492719Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.500115Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.499111Z"
+    },
+    "papermill": {
+     "duration": 0.017059,
+     "end_time": "2024-07-08T15:51:25.502365",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.485306",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "Enco.fit(train['Sex'])\n",
+    "train['Sex']=Enco.transform(train['Sex'])\n",
+    "test['Sex']=Enco.transform(test['Sex'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "2c4a0b10",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.516787Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.516448Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.522996Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.521965Z"
+    },
+    "papermill": {
+     "duration": 0.016088,
+     "end_time": "2024-07-08T15:51:25.524957",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.508869",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "Enco.fit(train['Embarked'])\n",
+    "train['Embarked']=Enco.transform(train['Embarked'])\n",
+    "test['Embarked']=Enco.transform(test['Embarked'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "a09aa353",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.539677Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.539038Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.545665Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.544578Z"
+    },
+    "papermill": {
+     "duration": 0.016333,
+     "end_time": "2024-07-08T15:51:25.547734",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.531401",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "Enco.fit(train['Title'])\n",
+    "train['Title']=Enco.transform(train['Title'])\n",
+    "test['Title']=Enco.transform(test['Title'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "967fa788",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.562619Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.561751Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.575015Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.574019Z"
+    },
+    "papermill": {
+     "duration": 0.022821,
+     "end_time": "2024-07-08T15:51:25.577102",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.554281",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Embarked</th>\n",
+       "      <th>Title</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>22.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>38.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>71.2833</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>26.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.9250</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>4</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>53.1000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>5</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>8.0500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   PassengerId  Survived  Pclass  Sex   Age  SibSp  Parch     Fare  Embarked  \\\n",
+       "0            1         0       3    1  22.0      1      0   7.2500         2   \n",
+       "1            2         1       1    0  38.0      1      0  71.2833         0   \n",
+       "2            3         1       3    0  26.0      0      0   7.9250         2   \n",
+       "3            4         1       1    0  35.0      1      0  53.1000         2   \n",
+       "4            5         0       3    1  35.0      0      0   8.0500         2   \n",
+       "\n",
+       "   Title  \n",
+       "0      2  \n",
+       "1      3  \n",
+       "2      1  \n",
+       "3      3  \n",
+       "4      2  "
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "831f5c4e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-08T15:51:25.591893Z",
+     "iopub.status.busy": "2024-07-08T15:51:25.591504Z",
+     "iopub.status.idle": "2024-07-08T15:51:25.604043Z",
+     "shell.execute_reply": "2024-07-08T15:51:25.603088Z"
+    },
+    "papermill": {
+     "duration": 0.02229,
+     "end_time": "2024-07-08T15:51:25.606189",
+     "exception": false,
+     "start_time": "2024-07-08T15:51:25.583899",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Embarked</th>\n",
+       "      <th>Title</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>892</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>34.5</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8292</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>893</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>47.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.0000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>894</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>62.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>9.6875</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>895</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>27.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>8.6625</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>896</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>22.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>12.2875</td>\n",
+       "      <td>2</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   PassengerId  Pclass  Sex   Age  SibSp  Parch     Fare  Embarked  Title\n",
+       "0          892       3    1  34.5      0      0   7.8292         1      2\n",
+       "1          893       3    0  47.0      1      0   7.0000         2      3\n",
+       "2          894       2    1  62.0      0      0   9.6875         1      2\n",
+       "3          895       3    1  27.0      0      0   8.6625         2      2\n",
+       "4          896       3    0  22.0      1      1  12.2875         2      3"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "test.head()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [
+    {
+     "databundleVersionId": 26502,
+     "sourceId": 3136,
+     "sourceType": "competition"
+    }
+   ],
+   "dockerImageVersionId": 30732,
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.13"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 5.924292,
+   "end_time": "2024-07-08T15:51:26.133006",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-07-08T15:51:20.208714",
+   "version": "2.5.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
