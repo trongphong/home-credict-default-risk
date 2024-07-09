@@ -3,21 +3,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "31dc6396",
+   "id": "07a0aa59",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:22.860701Z",
-     "iopub.status.busy": "2024-07-08T15:51:22.860258Z",
-     "iopub.status.idle": "2024-07-08T15:51:23.678068Z",
-     "shell.execute_reply": "2024-07-08T15:51:23.676814Z"
+     "iopub.execute_input": "2024-07-09T09:45:04.832274Z",
+     "iopub.status.busy": "2024-07-09T09:45:04.831788Z",
+     "iopub.status.idle": "2024-07-09T09:45:05.965183Z",
+     "shell.execute_reply": "2024-07-09T09:45:05.963750Z"
     },
     "papermill": {
-     "duration": 0.828951,
-     "end_time": "2024-07-08T15:51:23.681085",
+     "duration": 1.151212,
+     "end_time": "2024-07-09T09:45:05.968633",
      "exception": false,
-     "start_time": "2024-07-08T15:51:22.852134",
+     "start_time": "2024-07-09T09:45:04.817421",
      "status": "completed"
     },
     "tags": []
@@ -56,19 +56,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "45338806",
+   "id": "846d442b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:23.695016Z",
-     "iopub.status.busy": "2024-07-08T15:51:23.694518Z",
-     "iopub.status.idle": "2024-07-08T15:51:24.868562Z",
-     "shell.execute_reply": "2024-07-08T15:51:24.867624Z"
+     "iopub.execute_input": "2024-07-09T09:45:05.996144Z",
+     "iopub.status.busy": "2024-07-09T09:45:05.995447Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.611171Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.609829Z"
     },
     "papermill": {
-     "duration": 1.183713,
-     "end_time": "2024-07-08T15:51:24.871103",
+     "duration": 1.632896,
+     "end_time": "2024-07-09T09:45:07.614462",
      "exception": false,
-     "start_time": "2024-07-08T15:51:23.687390",
+     "start_time": "2024-07-09T09:45:05.981566",
      "status": "completed"
     },
     "tags": []
@@ -82,19 +82,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "c2cc0ea0",
+   "id": "df83e20a",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:24.883819Z",
-     "iopub.status.busy": "2024-07-08T15:51:24.883483Z",
-     "iopub.status.idle": "2024-07-08T15:51:24.909903Z",
-     "shell.execute_reply": "2024-07-08T15:51:24.908833Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.641997Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.640597Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.685231Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.683805Z"
     },
     "papermill": {
-     "duration": 0.035563,
-     "end_time": "2024-07-08T15:51:24.912344",
+     "duration": 0.061773,
+     "end_time": "2024-07-09T09:45:07.688474",
      "exception": false,
-     "start_time": "2024-07-08T15:51:24.876781",
+     "start_time": "2024-07-09T09:45:07.626701",
      "status": "completed"
     },
     "tags": []
@@ -108,19 +108,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "67522737",
+   "id": "3a7b531e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:24.924757Z",
-     "iopub.status.busy": "2024-07-08T15:51:24.924396Z",
-     "iopub.status.idle": "2024-07-08T15:51:24.933315Z",
-     "shell.execute_reply": "2024-07-08T15:51:24.932441Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.715695Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.714608Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.726493Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.725220Z"
     },
     "papermill": {
-     "duration": 0.017584,
-     "end_time": "2024-07-08T15:51:24.935510",
+     "duration": 0.028289,
+     "end_time": "2024-07-09T09:45:07.729177",
      "exception": false,
-     "start_time": "2024-07-08T15:51:24.917926",
+     "start_time": "2024-07-09T09:45:07.700888",
      "status": "completed"
     },
     "tags": []
@@ -146,19 +146,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "fec40e26",
+   "id": "95a69c3c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:24.948889Z",
-     "iopub.status.busy": "2024-07-08T15:51:24.948209Z",
-     "iopub.status.idle": "2024-07-08T15:51:24.973349Z",
-     "shell.execute_reply": "2024-07-08T15:51:24.972317Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.756572Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.756086Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.790254Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.788939Z"
     },
     "papermill": {
-     "duration": 0.034494,
-     "end_time": "2024-07-08T15:51:24.975692",
+     "duration": 0.051808,
+     "end_time": "2024-07-09T09:45:07.793295",
      "exception": false,
-     "start_time": "2024-07-08T15:51:24.941198",
+     "start_time": "2024-07-09T09:45:07.741487",
      "status": "completed"
     },
     "tags": []
@@ -314,19 +314,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "35b49c58",
+   "id": "9eb31638",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:24.988866Z",
-     "iopub.status.busy": "2024-07-08T15:51:24.988530Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.010620Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.009284Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.820949Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.820446Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.850034Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.848647Z"
     },
     "papermill": {
-     "duration": 0.031312,
-     "end_time": "2024-07-08T15:51:25.012901",
+     "duration": 0.046918,
+     "end_time": "2024-07-09T09:45:07.853218",
      "exception": false,
-     "start_time": "2024-07-08T15:51:24.981589",
+     "start_time": "2024-07-09T09:45:07.806300",
      "status": "completed"
     },
     "tags": []
@@ -365,19 +365,19 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "193c3f6c",
+   "id": "54d0a979",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.027038Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.026202Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.032587Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.031502Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.881164Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.880606Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.889317Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.888031Z"
     },
     "papermill": {
-     "duration": 0.015942,
-     "end_time": "2024-07-08T15:51:25.034949",
+     "duration": 0.026012,
+     "end_time": "2024-07-09T09:45:07.892018",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.019007",
+     "start_time": "2024-07-09T09:45:07.866006",
      "status": "completed"
     },
     "tags": []
@@ -401,19 +401,19 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "1ac30138",
+   "id": "dc26865c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.049478Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.048765Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.058963Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.057966Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.922024Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.921497Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.934525Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.933009Z"
     },
     "papermill": {
-     "duration": 0.020017,
-     "end_time": "2024-07-08T15:51:25.061277",
+     "duration": 0.030712,
+     "end_time": "2024-07-09T09:45:07.937324",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.041260",
+     "start_time": "2024-07-09T09:45:07.906612",
      "status": "completed"
     },
     "tags": []
@@ -427,19 +427,19 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "a8b6567a",
+   "id": "7ed824ac",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.075069Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.074689Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.087042Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.086105Z"
+     "iopub.execute_input": "2024-07-09T09:45:07.965631Z",
+     "iopub.status.busy": "2024-07-09T09:45:07.965103Z",
+     "iopub.status.idle": "2024-07-09T09:45:07.982670Z",
+     "shell.execute_reply": "2024-07-09T09:45:07.981313Z"
     },
     "papermill": {
-     "duration": 0.02185,
-     "end_time": "2024-07-08T15:51:25.089251",
+     "duration": 0.035017,
+     "end_time": "2024-07-09T09:45:07.985532",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.067401",
+     "start_time": "2024-07-09T09:45:07.950515",
      "status": "completed"
     },
     "tags": []
@@ -453,19 +453,19 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "a5edc4a8",
+   "id": "854ad42c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.102854Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.102513Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.115919Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.115022Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.016145Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.015565Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.033904Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.032435Z"
     },
     "papermill": {
-     "duration": 0.022779,
-     "end_time": "2024-07-08T15:51:25.118173",
+     "duration": 0.038087,
+     "end_time": "2024-07-09T09:45:08.037372",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.095394",
+     "start_time": "2024-07-09T09:45:07.999285",
      "status": "completed"
     },
     "tags": []
@@ -483,19 +483,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "6b91b8c6",
+   "id": "a1e5a8e6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.132217Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.131514Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.138589Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.137434Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.066207Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.065662Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.075661Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.074366Z"
     },
     "papermill": {
-     "duration": 0.016386,
-     "end_time": "2024-07-08T15:51:25.140668",
+     "duration": 0.027864,
+     "end_time": "2024-07-09T09:45:08.078589",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.124282",
+     "start_time": "2024-07-09T09:45:08.050725",
      "status": "completed"
     },
     "tags": []
@@ -519,19 +519,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "b5ff2478",
+   "id": "6859465a",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.154868Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.154241Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.161282Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.160324Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.107649Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.107142Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.117181Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.115639Z"
     },
     "papermill": {
-     "duration": 0.016569,
-     "end_time": "2024-07-08T15:51:25.163526",
+     "duration": 0.028475,
+     "end_time": "2024-07-09T09:45:08.120641",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.146957",
+     "start_time": "2024-07-09T09:45:08.092166",
      "status": "completed"
     },
     "tags": []
@@ -555,19 +555,19 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "51d48a75",
+   "id": "414fe6eb",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.177476Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.177113Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.184636Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.183620Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.150214Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.149607Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.160860Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.159242Z"
     },
     "papermill": {
-     "duration": 0.016889,
-     "end_time": "2024-07-08T15:51:25.186664",
+     "duration": 0.029765,
+     "end_time": "2024-07-09T09:45:08.163884",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.169775",
+     "start_time": "2024-07-09T09:45:08.134119",
      "status": "completed"
     },
     "tags": []
@@ -581,19 +581,19 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "963c768f",
+   "id": "ac6860fa",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.201492Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.200853Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.214208Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.213232Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.194503Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.193094Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.212471Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.210860Z"
     },
     "papermill": {
-     "duration": 0.023948,
-     "end_time": "2024-07-08T15:51:25.216935",
+     "duration": 0.03759,
+     "end_time": "2024-07-09T09:45:08.215499",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.192987",
+     "start_time": "2024-07-09T09:45:08.177909",
      "status": "completed"
     },
     "tags": []
@@ -730,19 +730,19 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "69d19839",
+   "id": "9805c345",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.231742Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.230829Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.442239Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.441083Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.245892Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.245368Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.545604Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.544280Z"
     },
     "papermill": {
-     "duration": 0.221382,
-     "end_time": "2024-07-08T15:51:25.444697",
+     "duration": 0.319372,
+     "end_time": "2024-07-09T09:45:08.548763",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.223315",
+     "start_time": "2024-07-09T09:45:08.229391",
      "status": "completed"
     },
     "tags": []
@@ -754,13 +754,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "16e88118",
+   "id": "b2d5aa00",
    "metadata": {
     "papermill": {
-     "duration": 0.006095,
-     "end_time": "2024-07-08T15:51:25.457313",
+     "duration": 0.012484,
+     "end_time": "2024-07-09T09:45:08.574488",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.451218",
+     "start_time": "2024-07-09T09:45:08.562004",
      "status": "completed"
     },
     "tags": []
@@ -772,19 +772,19 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "a43dd300",
+   "id": "d5376d1d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.472176Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.471314Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.476459Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.475308Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.602165Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.601712Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.607788Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.606319Z"
     },
     "papermill": {
-     "duration": 0.01492,
-     "end_time": "2024-07-08T15:51:25.478735",
+     "duration": 0.022865,
+     "end_time": "2024-07-09T09:45:08.610325",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.463815",
+     "start_time": "2024-07-09T09:45:08.587460",
      "status": "completed"
     },
     "tags": []
@@ -797,19 +797,19 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "c0421648",
+   "id": "8dede720",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.493664Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.492719Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.500115Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.499111Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.638864Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.638414Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.647478Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.646192Z"
     },
     "papermill": {
-     "duration": 0.017059,
-     "end_time": "2024-07-08T15:51:25.502365",
+     "duration": 0.026397,
+     "end_time": "2024-07-09T09:45:08.649879",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.485306",
+     "start_time": "2024-07-09T09:45:08.623482",
      "status": "completed"
     },
     "tags": []
@@ -824,19 +824,19 @@
   {
    "cell_type": "code",
    "execution_count": 18,
-   "id": "2c4a0b10",
+   "id": "3913cf0e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.516787Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.516448Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.522996Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.521965Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.678742Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.678270Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.687375Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.686121Z"
     },
     "papermill": {
-     "duration": 0.016088,
-     "end_time": "2024-07-08T15:51:25.524957",
+     "duration": 0.026553,
+     "end_time": "2024-07-09T09:45:08.690073",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.508869",
+     "start_time": "2024-07-09T09:45:08.663520",
      "status": "completed"
     },
     "tags": []
@@ -851,19 +851,19 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "a09aa353",
+   "id": "2a526818",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.539677Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.539038Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.545665Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.544578Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.719522Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.718704Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.727063Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.725738Z"
     },
     "papermill": {
-     "duration": 0.016333,
-     "end_time": "2024-07-08T15:51:25.547734",
+     "duration": 0.025873,
+     "end_time": "2024-07-09T09:45:08.729692",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.531401",
+     "start_time": "2024-07-09T09:45:08.703819",
      "status": "completed"
     },
     "tags": []
@@ -878,19 +878,19 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "967fa788",
+   "id": "b5fbe46c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.562619Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.561751Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.575015Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.574019Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.758635Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.758186Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.774697Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.773473Z"
     },
     "papermill": {
-     "duration": 0.022821,
-     "end_time": "2024-07-08T15:51:25.577102",
+     "duration": 0.034725,
+     "end_time": "2024-07-09T09:45:08.777373",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.554281",
+     "start_time": "2024-07-09T09:45:08.742648",
      "status": "completed"
     },
     "tags": []
@@ -1027,19 +1027,19 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "831f5c4e",
+   "id": "1a2f33f6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-07-08T15:51:25.591893Z",
-     "iopub.status.busy": "2024-07-08T15:51:25.591504Z",
-     "iopub.status.idle": "2024-07-08T15:51:25.604043Z",
-     "shell.execute_reply": "2024-07-08T15:51:25.603088Z"
+     "iopub.execute_input": "2024-07-09T09:45:08.806697Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.806086Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.822609Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.821350Z"
     },
     "papermill": {
-     "duration": 0.02229,
-     "end_time": "2024-07-08T15:51:25.606189",
+     "duration": 0.034608,
+     "end_time": "2024-07-09T09:45:08.825389",
      "exception": false,
-     "start_time": "2024-07-08T15:51:25.583899",
+     "start_time": "2024-07-09T09:45:08.790781",
      "status": "completed"
     },
     "tags": []
@@ -1159,6 +1159,1070 @@
    "source": [
     "test.head()"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "3165d2fd",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:08.854848Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.854440Z",
+     "iopub.status.idle": "2024-07-09T09:45:08.867040Z",
+     "shell.execute_reply": "2024-07-09T09:45:08.865513Z"
+    },
+    "papermill": {
+     "duration": 0.030296,
+     "end_time": "2024-07-09T09:45:08.869854",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:08.839558",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 891 entries, 0 to 890\n",
+      "Data columns (total 10 columns):\n",
+      " #   Column       Non-Null Count  Dtype  \n",
+      "---  ------       --------------  -----  \n",
+      " 0   PassengerId  891 non-null    int64  \n",
+      " 1   Survived     891 non-null    int64  \n",
+      " 2   Pclass       891 non-null    int64  \n",
+      " 3   Sex          891 non-null    int64  \n",
+      " 4   Age          714 non-null    float64\n",
+      " 5   SibSp        891 non-null    int64  \n",
+      " 6   Parch        891 non-null    int64  \n",
+      " 7   Fare         891 non-null    float64\n",
+      " 8   Embarked     891 non-null    int64  \n",
+      " 9   Title        891 non-null    int64  \n",
+      "dtypes: float64(2), int64(8)\n",
+      "memory usage: 69.7 KB\n"
+     ]
+    }
+   ],
+   "source": [
+    "train.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ae56cc94",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013492,
+     "end_time": "2024-07-09T09:45:08.897366",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:08.883874",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Simple imputer"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "cdc4c6d3",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:08.927129Z",
+     "iopub.status.busy": "2024-07-09T09:45:08.926667Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.251977Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.250575Z"
+    },
+    "papermill": {
+     "duration": 0.344204,
+     "end_time": "2024-07-09T09:45:09.255274",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:08.911070",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from sklearn.impute import SimpleImputer"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "213db8ca",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.286515Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.285976Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.303347Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.301875Z"
+    },
+    "papermill": {
+     "duration": 0.036334,
+     "end_time": "2024-07-09T09:45:09.306135",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.269801",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "SimImp=SimpleImputer(missing_values=np.nan, strategy='median')\n",
+    "SimImp.fit(train[['Age']])\n",
+    "train['AgeSim']=SimImp.transform(train[['Age']])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "7c31dfb2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.341513Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.340719Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.376751Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.374750Z"
+    },
+    "papermill": {
+     "duration": 0.060775,
+     "end_time": "2024-07-09T09:45:09.381266",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.320491",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Embarked</th>\n",
+       "      <th>Title</th>\n",
+       "      <th>AgeSim</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>6</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>8.4583</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>17</th>\n",
+       "      <td>18</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>13.0000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>19</th>\n",
+       "      <td>20</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>26</th>\n",
+       "      <td>27</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>28</th>\n",
+       "      <td>29</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8792</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>859</th>\n",
+       "      <td>860</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2292</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>863</th>\n",
+       "      <td>864</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>8</td>\n",
+       "      <td>2</td>\n",
+       "      <td>69.5500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>868</th>\n",
+       "      <td>869</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>9.5000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>878</th>\n",
+       "      <td>879</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8958</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>888</th>\n",
+       "      <td>889</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>23.4500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>28.0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>177 rows × 11 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     PassengerId  Survived  Pclass  Sex  Age  SibSp  Parch     Fare  Embarked  \\\n",
+       "5              6         0       3    1  NaN      0      0   8.4583         1   \n",
+       "17            18         1       2    1  NaN      0      0  13.0000         2   \n",
+       "19            20         1       3    0  NaN      0      0   7.2250         0   \n",
+       "26            27         0       3    1  NaN      0      0   7.2250         0   \n",
+       "28            29         1       3    0  NaN      0      0   7.8792         1   \n",
+       "..           ...       ...     ...  ...  ...    ...    ...      ...       ...   \n",
+       "859          860         0       3    1  NaN      0      0   7.2292         0   \n",
+       "863          864         0       3    0  NaN      8      2  69.5500         2   \n",
+       "868          869         0       3    1  NaN      0      0   9.5000         2   \n",
+       "878          879         0       3    1  NaN      0      0   7.8958         2   \n",
+       "888          889         0       3    0  NaN      1      2  23.4500         2   \n",
+       "\n",
+       "     Title  AgeSim  \n",
+       "5        2    28.0  \n",
+       "17       2    28.0  \n",
+       "19       3    28.0  \n",
+       "26       2    28.0  \n",
+       "28       1    28.0  \n",
+       "..     ...     ...  \n",
+       "859      2    28.0  \n",
+       "863      1    28.0  \n",
+       "868      2    28.0  \n",
+       "878      2    28.0  \n",
+       "888      1    28.0  \n",
+       "\n",
+       "[177 rows x 11 columns]"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.loc[train['Age'].isnull()]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "7ff7633a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.419655Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.419159Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.426956Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.425728Z"
+    },
+    "papermill": {
+     "duration": 0.028316,
+     "end_time": "2024-07-09T09:45:09.429711",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.401395",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train=train.drop([ 'AgeSim'], axis=1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8acc5dbf",
+   "metadata": {
+    "papermill": {
+     "duration": 0.014158,
+     "end_time": "2024-07-09T09:45:09.458756",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.444598",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Multivariate imputer\n",
+    "We impute the missing values by modeling each feature with missing values as a fucntion of other features."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "3f3ec8f2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.493613Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.492896Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.507379Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.505698Z"
+    },
+    "papermill": {
+     "duration": 0.037753,
+     "end_time": "2024-07-09T09:45:09.511035",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.473282",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from sklearn.experimental import enable_iterative_imputer\n",
+    "from sklearn.impute import IterativeImputer"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "bf4d209b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.552948Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.552174Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.575702Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.573766Z"
+    },
+    "papermill": {
+     "duration": 0.048988,
+     "end_time": "2024-07-09T09:45:09.580410",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.531422",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "MulImp=IterativeImputer(random_state=0)\n",
+    "MulImp.fit(train[['Age']])\n",
+    "train['AgeMul']=MulImp.fit_transform(train[['Age']])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "2c082d0f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.626363Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.625231Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.653313Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.651882Z"
+    },
+    "papermill": {
+     "duration": 0.05384,
+     "end_time": "2024-07-09T09:45:09.656800",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.602960",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Embarked</th>\n",
+       "      <th>Title</th>\n",
+       "      <th>AgeMul</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>6</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>8.4583</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>17</th>\n",
+       "      <td>18</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>13.0000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>19</th>\n",
+       "      <td>20</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>26</th>\n",
+       "      <td>27</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>28</th>\n",
+       "      <td>29</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8792</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>859</th>\n",
+       "      <td>860</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2292</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>863</th>\n",
+       "      <td>864</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>8</td>\n",
+       "      <td>2</td>\n",
+       "      <td>69.5500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>868</th>\n",
+       "      <td>869</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>9.5000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>878</th>\n",
+       "      <td>879</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8958</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>888</th>\n",
+       "      <td>889</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>23.4500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>177 rows × 11 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     PassengerId  Survived  Pclass  Sex  Age  SibSp  Parch     Fare  Embarked  \\\n",
+       "5              6         0       3    1  NaN      0      0   8.4583         1   \n",
+       "17            18         1       2    1  NaN      0      0  13.0000         2   \n",
+       "19            20         1       3    0  NaN      0      0   7.2250         0   \n",
+       "26            27         0       3    1  NaN      0      0   7.2250         0   \n",
+       "28            29         1       3    0  NaN      0      0   7.8792         1   \n",
+       "..           ...       ...     ...  ...  ...    ...    ...      ...       ...   \n",
+       "859          860         0       3    1  NaN      0      0   7.2292         0   \n",
+       "863          864         0       3    0  NaN      8      2  69.5500         2   \n",
+       "868          869         0       3    1  NaN      0      0   9.5000         2   \n",
+       "878          879         0       3    1  NaN      0      0   7.8958         2   \n",
+       "888          889         0       3    0  NaN      1      2  23.4500         2   \n",
+       "\n",
+       "     Title     AgeMul  \n",
+       "5        2  29.699118  \n",
+       "17       2  29.699118  \n",
+       "19       3  29.699118  \n",
+       "26       2  29.699118  \n",
+       "28       1  29.699118  \n",
+       "..     ...        ...  \n",
+       "859      2  29.699118  \n",
+       "863      1  29.699118  \n",
+       "868      2  29.699118  \n",
+       "878      2  29.699118  \n",
+       "888      1  29.699118  \n",
+       "\n",
+       "[177 rows x 11 columns]"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.loc[train['Age'].isnull()]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "427b0f70",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.691617Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.689996Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.700945Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.698836Z"
+    },
+    "papermill": {
+     "duration": 0.032826,
+     "end_time": "2024-07-09T09:45:09.705626",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.672800",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train=train.drop(['AgeMul'], axis=1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2f57d1ff",
+   "metadata": {
+    "papermill": {
+     "duration": 0.017026,
+     "end_time": "2024-07-09T09:45:09.741574",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.724548",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### KNN imputer\n",
+    "Using k-Nearest Neighbors to complete the missing values"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "8210e32f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.781119Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.779735Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.816643Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.815185Z"
+    },
+    "papermill": {
+     "duration": 0.061728,
+     "end_time": "2024-07-09T09:45:09.820188",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.758460",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from sklearn.impute import KNNImputer\n",
+    "ImpKnn=KNNImputer(n_neighbors=5)\n",
+    "ImpKnn.fit(train[['Age']])\n",
+    "train['AgeKnn']=ImpKnn.fit_transform(train[['Age']])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "b9902a88",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-07-09T09:45:09.854522Z",
+     "iopub.status.busy": "2024-07-09T09:45:09.853363Z",
+     "iopub.status.idle": "2024-07-09T09:45:09.876790Z",
+     "shell.execute_reply": "2024-07-09T09:45:09.875289Z"
+    },
+    "papermill": {
+     "duration": 0.043831,
+     "end_time": "2024-07-09T09:45:09.879521",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.835690",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Embarked</th>\n",
+       "      <th>Title</th>\n",
+       "      <th>AgeKnn</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>6</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>8.4583</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>17</th>\n",
+       "      <td>18</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>13.0000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>19</th>\n",
+       "      <td>20</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>26</th>\n",
+       "      <td>27</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>28</th>\n",
+       "      <td>29</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8792</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>859</th>\n",
+       "      <td>860</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.2292</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>863</th>\n",
+       "      <td>864</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>8</td>\n",
+       "      <td>2</td>\n",
+       "      <td>69.5500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>868</th>\n",
+       "      <td>869</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>9.5000</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>878</th>\n",
+       "      <td>879</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>7.8958</td>\n",
+       "      <td>2</td>\n",
+       "      <td>2</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>888</th>\n",
+       "      <td>889</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>23.4500</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>29.699118</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>177 rows × 11 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     PassengerId  Survived  Pclass  Sex  Age  SibSp  Parch     Fare  Embarked  \\\n",
+       "5              6         0       3    1  NaN      0      0   8.4583         1   \n",
+       "17            18         1       2    1  NaN      0      0  13.0000         2   \n",
+       "19            20         1       3    0  NaN      0      0   7.2250         0   \n",
+       "26            27         0       3    1  NaN      0      0   7.2250         0   \n",
+       "28            29         1       3    0  NaN      0      0   7.8792         1   \n",
+       "..           ...       ...     ...  ...  ...    ...    ...      ...       ...   \n",
+       "859          860         0       3    1  NaN      0      0   7.2292         0   \n",
+       "863          864         0       3    0  NaN      8      2  69.5500         2   \n",
+       "868          869         0       3    1  NaN      0      0   9.5000         2   \n",
+       "878          879         0       3    1  NaN      0      0   7.8958         2   \n",
+       "888          889         0       3    0  NaN      1      2  23.4500         2   \n",
+       "\n",
+       "     Title     AgeKnn  \n",
+       "5        2  29.699118  \n",
+       "17       2  29.699118  \n",
+       "19       3  29.699118  \n",
+       "26       2  29.699118  \n",
+       "28       1  29.699118  \n",
+       "..     ...        ...  \n",
+       "859      2  29.699118  \n",
+       "863      1  29.699118  \n",
+       "868      2  29.699118  \n",
+       "878      2  29.699118  \n",
+       "888      1  29.699118  \n",
+       "\n",
+       "[177 rows x 11 columns]"
+      ]
+     },
+     "execution_count": 32,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.loc[train['Age'].isnull()]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f6eb32eb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.015211,
+     "end_time": "2024-07-09T09:45:09.910809",
+     "exception": false,
+     "start_time": "2024-07-09T09:45:09.895598",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
@@ -1196,14 +2260,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 5.924292,
-   "end_time": "2024-07-08T15:51:26.133006",
+   "duration": 9.292226,
+   "end_time": "2024-07-09T09:45:10.751985",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2024-07-08T15:51:20.208714",
+   "start_time": "2024-07-09T09:45:01.459759",
    "version": "2.5.0"
   }
  },
